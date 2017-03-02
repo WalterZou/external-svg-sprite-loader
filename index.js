@@ -58,10 +58,10 @@ function loader(content) {
         .then((content) => {
 
             // Create an hash of the optimized content to be appended to the icon name
-            const hash = loaderUtils.getHashDigest(content, 'md5', 'hex', 5);
+            // const hash = loaderUtils.getHashDigest(content, 'md5', 'hex', 5);
 
             // Register the sprite and icon
-            const icon = SvgStorePlugin.getSprite(query.name).addIcon(resourcePath, query.prefix, hash, content.toString());
+            const icon = SvgStorePlugin.getSprite(query.name).addIcon(resourcePath, query.prefix, content.toString());
 
             // Export the icon as a metadata object that contains urls to be used on an <img/> in HTML or url() in CSS
             callback(
